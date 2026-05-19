@@ -39,4 +39,42 @@
   <span style="color: red;">failure</span>
 }
 
+<br>
+
+<h1>For loop</h1>
+
+<ul>
+  @for(user of users();track user){
+    <li>{{user}}</li>
+  }
+</ul>
+<hr>
+<ul>
+  @for (user of userdetails(); track user.id) {
+
+    <li [style.backgroundColor]="$odd ? 'green' : 'lightgray'">
+
+      <span>
+        {{$index + 1}} {{user.name + " " + user.email}}
+
+        @if ($first) {
+          <span style="color: red;">Admin</span>
+        }
+
+        @if ($last) {
+          <span style="color: red;">Guest</span>
+        }
+      </span>
+
+      @if ($count == $index + 1) {
+        <span>
+          <b>Total users</b> {{$count}}
+        </span>
+      }
+
+    </li>
+
+  }
+</ul>
+
 

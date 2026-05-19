@@ -23,4 +23,13 @@ export class App {
   }
 
 
+  users=signal(["John", "Jane", "Doe"]);
+
+  userdetails = signal([ {id: 1, name: "John", age: 30, email: "a@gmail.com" },
+                          {id: 2, name: "Jane", age: 25, email: "b@gmail.com" },
+                          {id: 3, name: "Doe", age: 35, email: "c@gmail.com" }
+
+   ]);
+
+
 }
