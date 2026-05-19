@@ -32,4 +32,12 @@ export class App {
    ]);
 
 
+   statusnew=signal('notstarted');
+   handleswitch(event:Event){
+    const target = event.target as HTMLInputElement;
+    this.statusnew.set(target.value);
+
+   }
+
+
 }

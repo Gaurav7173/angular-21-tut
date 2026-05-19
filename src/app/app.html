@@ -78,3 +78,35 @@
 </ul>
 
 
+<hr>
+<h1>switch statement</h1>
+
+<select (change)="handleswitch($event)" name="statusnew" id="">
+  <option value="notstarted">Not Started</option>
+  <option value="progress">In Progress</option>
+  <option value="success">Success</option>
+  <option value="error">Failure</option>
+</select>
+
+@switch (statusnew()) {
+  @case("notstarted") {
+    <span style="color: black;">not started</span>
+  }
+  @case("progress") {
+    <span style="color: orange;">in progress</span>
+  }
+  @case("success") {
+    <span style="color: orange;">success</span>
+
+  }
+  @default {
+    <span>error</span>
+  }
+
+
+}
+
+
+
+
+
