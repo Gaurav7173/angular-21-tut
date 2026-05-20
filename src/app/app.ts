@@ -3,12 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
 import { single } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Footer } from './footer/footer';
+import { Footer } from './Footer/footer';
 import { SearchBox } from './search-box/search-box';
+import { Child } from './child/child';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -114,5 +115,14 @@ export class App {
     }
 
     nums=signal([1,2,3,4,5]);
+
+    usersnew=signal(['anil', 'sunil', 'saunil']);
+
+    newuser=signal('');
+
+    addnewuser(){
+      this.usersnew.update((item)=>([...item,this.newuser()]));
+      this.newuser.set('');
+    }
 
 }

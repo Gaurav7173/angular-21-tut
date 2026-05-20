@@ -193,11 +193,31 @@
 
 <app-footer></app-footer>
 
-
-
 @for (n of nums(); track n) {
 <app-search-box></app-search-box>
 }
+<hr>
+<h1>Child Component</h1>
+
+
+
+<input
+  type="text"
+  placeholder="enter new username"
+  [value]="newuser()"
+  (input)="newuser.set($any($event.target).value)"
+>
+
+<button (click)="addnewuser()">add new user</button>
+
+@for (user of usersnew(); track user) {
+  <app-child [username]="user"></app-child>
+}
+
+ 
+
+
+
 
 
 
