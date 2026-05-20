@@ -54,4 +54,26 @@ export class App {
     
    }
 
+   username=signal('gaurav kumar')
+   userdata2=signal({college:'aps school',email:'college'});
+
+   get uname(){
+    return this.username().toUpperCase();
+   }
+
+
+
+   set uname(val:string){
+    this.username.set(val);
+   }
+
+   get usercollege(){
+    return this.userdata2().college.toUpperCase();
+   }
+   set usercollege(val:string){
+    this.userdata2.update((item)=>({
+      ...item,college:val
+    }))
+   }
+
 }

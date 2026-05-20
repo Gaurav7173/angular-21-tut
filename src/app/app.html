@@ -125,6 +125,13 @@
  <h1>{{userdata().email}}</h1>
  <input type="text" [value]="userdata().email" (input)="updateuserdata('email', $event.target.value)">
 
+<hr>
+
+<h1>{{uname}}</h1>
+<input type="text" [(ngModel)]="uname">
+<hr>
+<h2>{{usercollege}}</h2>
+<input type="text" [(ngModel)]="usercollege">
 
 
 
