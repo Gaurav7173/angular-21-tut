@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
 import { single } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
