@@ -106,6 +106,27 @@
 
 }
 
+<hr>
+<h1>two way binding</h1>
+
+<h1>{{name()}}</h1>
+<input type="text" [value]="name()" (input)="name.set($event.target.value)">
+<br>
+<h1>{{age}}</h1>
+<!-- <input type="text" [value]="age" [(ngModel)]="age"> -->
+ <input type="text" [(ngModel)]="age">
+
+ <h1>{{userdata().name}}</h1>
+ <input type="text" [value]="userdata().name" (input)="updateuserdata('name', $event.target.value)">
+ <br>
+ <h1>{{userdata().age}}</h1>
+ <input type="text" [value]="userdata().age" (input)="updateuserdata('age', $event.target.value)">
+ <br>
+ <h1>{{userdata().email}}</h1>
+ <input type="text" [value]="userdata().email" (input)="updateuserdata('email', $event.target.value)">
+
+
+
 
 
 
