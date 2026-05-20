@@ -134,6 +134,25 @@
 <input type="text" [(ngModel)]="usercollege">
 
 
+<hr>
+<h1>To do list</h1>
+<input type="text" [value]="title()" placeholder="Add a new task" (input)="title.set($event.target.value)">
+<button (click)="addtask()">Add Task</button>
+<ul>
+@for(task of tasks();track task.id){
+  <li class="task-list">
+    <span>{{$index + 1}}</span>
+    <span>{{task.title}}</span>
+    <span><button (click)="deletetask(task.id)">Delete</button></span>
+  </li>
+  
+}
+@empty{
+  <span>no task foound</span>
+}
+</ul>
+
+
 
 
 
