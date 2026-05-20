@@ -4,10 +4,11 @@ import { RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
 import { single } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Footer } from './footer/footer';
+import { SearchBox } from './search-box/search-box';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -111,5 +112,7 @@ export class App {
       this.color=color;
 
     }
+
+    nums=signal([1,2,3,4,5]);
 
 }
