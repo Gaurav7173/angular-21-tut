@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
 import { single } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -97,5 +98,17 @@ export class App {
     this.tasks.update((tasks) => tasks.filter(task => task.id != id));
   }
 
+  islogin2=signal(true);
+
+  students=["anil","sunil","monil"];
+
+  studentdata=[{name:"anil",age:20,email:"a@gmail.com"},{name:"sunil",age:25,email:"b@gmail.com"},{name:"monil",age:30,email:"c@gmail.com"}];
+
+    islogin3=true;
+    color='';
+    changecolor(color:string){
+      this.color=color;
+
+    }
 
 }

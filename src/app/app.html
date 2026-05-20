@@ -152,6 +152,44 @@
 }
 </ul>
 
+<br>
+<hr>
+@if(islogin2()){
+  <h1>Welcome user</h1>
+
+  <ul>
+    <li *ngFor="let student of students">
+      {{student}}
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let student of studentdata">
+      {{student.name}} - {{student.age}} - {{student.email}}
+    </li>
+  </ul>
+}
+
+<hr>
+<div *ngIf="islogin3; else loginblock">
+  <a href="" >Logout</a>
+</div>
+<ng-template #loginblock> 
+  <a href="">Login</a>
+</ng-template>
+
+<h1>switch</h1>
+<button (click)="changecolor('red')">red</button>
+<button (click)="changecolor('green')">green</button>
+<button (click)="changecolor('blue')">blue</button>
+
+<div [ngSwitch]="color">
+  <span *ngSwitchCase="'red'" style="background-color: red;">red color</span>
+  <span *ngSwitchCase="'green'" style="background-color: green;">green color</span>
+  <span *ngSwitchCase="'blue'" style="background-color: blue;">blue color</span>
+  <span *ngSwitchDefault>no color found</span>
+</div>
+
 
 
 
