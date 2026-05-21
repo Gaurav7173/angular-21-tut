@@ -138,6 +138,13 @@ deleteuser(name: string) {
   this.usersnew.update((data) => data.filter(item => item != name));
 }
 
-  
+titlepipe=signal('angular 21 tutorial');
+
+mobile="samsung";
+price=20000;
+date="12-12-2026";
+
+todaydate=new Date();
+  names=signal(['anil', 'sunil', 'monil']);
 
 }

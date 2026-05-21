@@ -234,6 +234,23 @@
   <hr>
   <app-control-count></app-control-count>
 
+  <hr>
+  <h1>{{titlepipe()|uppercase}}</h1>
+  <h1>{{titlepipe()|titlecase}}</h1>
+  <h1>{{name()|uppercase}}</h1>
+  <input type="text" (input)="name.set($event.target.value)">
+  <h1>{{mobile|uppercase}}</h1>
+  <h1>{{price|currency}}</h1>
+  <h1>{{date|date}}</h1>
+  <h1>{{names()|json}}</h1>
+  <h1>{{todaydate|date}}</h1>
+    <h1>{{todaydate|date:'dd'}}</h1>
+    <h1>{{todaydate|date:'MM'}}</h1>
+    <h1>{{todaydate|date:'Y'}}</h1>
+   <h1>{{todaydate|date:'short'}}</h1>
+   <h1>{{todaydate|date:'full'}}</h1>
+
+
  
 
 
