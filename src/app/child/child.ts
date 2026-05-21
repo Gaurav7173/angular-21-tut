@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -8,5 +8,21 @@ import { Component, Input } from '@angular/core';
 })
 export class Child {
   @Input() username: string |undefined;
+  @Output() selecteduser = new EventEmitter<string>();
+  @Output() deleteuser = new EventEmitter<string>();
+
+  whichuser(name: string|undefined) {
+    this.selecteduser.emit(name);
+
+    
+
+  }
+    
+  delete(name: string|undefined) {
+      this.deleteuser.emit(name);
+    }
+
+
+  
 
 }

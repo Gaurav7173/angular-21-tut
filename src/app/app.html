@@ -198,6 +198,8 @@
 }
 <hr>
 <h1>Child Component</h1>
+<br>
+<h3>selected username: {{selectedusername()}}</h3>
 
 
 
@@ -211,7 +213,16 @@
 <button (click)="addnewuser()">add new user</button>
 
 @for (user of usersnew(); track user) {
-  <app-child [username]="user"></app-child>
+  <app-child
+
+  [username]="user"
+
+  (selecteduser)="handleSelectedUser($event)"
+  (deleteuser)="deleteuser($event)">
+  
+
+  </app-child>
+
 }
 
  

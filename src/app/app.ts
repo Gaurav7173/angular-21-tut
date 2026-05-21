@@ -119,10 +119,23 @@ export class App {
     usersnew=signal(['anil', 'sunil', 'saunil']);
 
     newuser=signal('');
+    selectedusername=signal('');
 
     addnewuser(){
       this.usersnew.update((item)=>([...item,this.newuser()]));
       this.newuser.set('');
     }
+
+    handleSelectedUser(name: string) {
+ 
+  this.selectedusername.set(name);
+}
+
+deleteuser(name: string) {
+ console.log(name);
+  this.usersnew.update((data) => data.filter(item => item != name));
+}
+
+  
 
 }
