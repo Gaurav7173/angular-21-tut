@@ -249,7 +249,15 @@
     <h1>{{todaydate|date:'Y'}}</h1>
    <h1>{{todaydate|date:'short'}}</h1>
    <h1>{{todaydate|date:'full'}}</h1>
+<hr>
+   <h1>{{titlecustomepipe()|trimText|uppercase}}</h1>
+   <h1>{{mynamecustomepipe()|trimText:5}}</h1>
 
+  <hr>
+  <h1>{{amount()|currencyConvertor|currency:'INR'}}</h1>
+  <h1>{{amount()|currencyConvertor:30|currency:'INR'}}</h1>
+
+   
 
  
 

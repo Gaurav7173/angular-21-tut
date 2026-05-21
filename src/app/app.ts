@@ -8,10 +8,12 @@ import { SearchBox } from './search-box/search-box';
 import { Child } from './child/child';
 import { DisplayCount } from './display-count/display-count';
 import { ControlCount } from './control-count/control-count';
+import { TrimTextPipe } from './custome-pipe/trim-text-pipe';
+import { CurrencyConvertorPipe } from './custome-pipe/currency-convertor-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child,DisplayCount,ControlCount],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child,DisplayCount,ControlCount,TrimTextPipe,CurrencyConvertorPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -146,5 +148,10 @@ date="12-12-2026";
 
 todaydate=new Date();
   names=signal(['anil', 'sunil', 'monil']);
+
+  titlecustomepipe=signal('angular custom pipe tutorial');
+  mynamecustomepipe=signal('my name is Gaurav kumar');
+
+  amount=signal(1000);
 
 }
