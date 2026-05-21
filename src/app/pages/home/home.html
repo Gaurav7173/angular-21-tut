@@ -1,3 +1,12 @@
 <p>home works!</p>
 <button (click)="goToProfile()">Go to profile page</button>
+<br>
+<h1>Param parameters</h1>
+<a routerLink="/profile"
+[queryParams]="{id:1,name:'sam',age:14}">Go to sam's profile page</a>
+<br>
+<a routerLink="/profile"
+[queryParams]="{id:2,name:userdata().name,age:64}">Go to anil's profile page</a>
+
+<button (click)="goToProfile()">Go to profile page</button>
 
