@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.css',
 })
 export class Home {
+  constructor(public router: Router) { }// here we are injecting the router service to navigate to other page on button click
+
+  goToProfile() {
+    this.router.navigate(['profile']); 
+  }
 
 }
