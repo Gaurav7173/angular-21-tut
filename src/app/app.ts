@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
+import { RouterLink, RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
 import { single } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Footer } from './Footer/footer';
@@ -10,10 +10,11 @@ import { DisplayCount } from './display-count/display-count';
 import { ControlCount } from './control-count/control-count';
 import { TrimTextPipe } from './custome-pipe/trim-text-pipe';
 import { CurrencyConvertorPipe } from './custome-pipe/currency-convertor-pipe';
+import { Header } from './components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child,DisplayCount,ControlCount,TrimTextPipe,CurrencyConvertorPipe],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child,DisplayCount,ControlCount,TrimTextPipe,CurrencyConvertorPipe,RouterLink,Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
