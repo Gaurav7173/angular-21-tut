@@ -6,10 +6,12 @@ import { CommonModule } from '@angular/common';
 import { Footer } from './Footer/footer';
 import { SearchBox } from './search-box/search-box';
 import { Child } from './child/child';
+import { DisplayCount } from './display-count/display-count';
+import { ControlCount } from './control-count/control-count';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child,DisplayCount,ControlCount],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
