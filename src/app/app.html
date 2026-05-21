@@ -246,7 +246,6 @@
   <h1>{{todaydate|date}}</h1>
     <h1>{{todaydate|date:'dd'}}</h1>
     <h1>{{todaydate|date:'MM'}}</h1>
-    <h1>{{todaydate|date:'Y'}}</h1>
    <h1>{{todaydate|date:'short'}}</h1>
    <h1>{{todaydate|date:'full'}}</h1>
 <hr>
@@ -256,6 +255,18 @@
   <hr>
   <h1>{{amount()|currencyConvertor|currency:'INR'}}</h1>
   <h1>{{amount()|currencyConvertor:30|currency:'INR'}}</h1>
+
+  <hr>
+  <h1>Router in angular</h1>
+
+<ul style="display: flex; list-style: none; gap: 20px;">
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/about">About</a></li>
+  <li><a routerLink="/login">Login</a></li>
+  <li><a routerLink="/profile">Profile</a></li>
+</ul>
+
+  <router-outlet></router-outlet>
 
    
 
