@@ -4,6 +4,8 @@ import { Login } from './pages/login/login';
 import { About } from './pages/about/about';
 import { Profile } from './pages/profile/profile';
 import { PageNotFound } from './pages/page-not-found/page-not-found';
+import { Users } from './pages/users/users';
+import { UserDetails } from './pages/user-details/user-details';
 
 export const routes: Routes = [
     {
@@ -21,6 +23,13 @@ export const routes: Routes = [
     {
         path:"about",component:About
     },
+    {
+        path:"users",component:Users
+    },
+    {
+        path:"user-details/:id",component:UserDetails
+    },
+    
     {
         path:"profile",component:Profile
     },
