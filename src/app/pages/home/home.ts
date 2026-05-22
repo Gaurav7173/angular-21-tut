@@ -10,12 +10,16 @@ import { Router, RouterLink } from '@angular/router';
 export class Home {
   constructor(public router: Router) { }// here we are injecting the router service to navigate to other page on button click
 
-  userdata=signal({name:"anil",age:14,id:1});
+  userdata=signal({name:"anil bhai",age:14,id:1});
 
   goToProfile() {
     this.router.navigate(['profile'],{
       queryParams:{id:1,name:'peter',age:14}
     }); 
+  }
+
+  goToAbout() {
+    this.router.navigate(['about',this.userdata().name,this.userdata().age]);
   }
 
 }

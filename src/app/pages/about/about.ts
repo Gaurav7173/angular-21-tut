@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -7,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
 })
 export class About {
+  constructor(public route: ActivatedRoute) { }
 
+  namerouteparam=signal("");
+  agerouteparam=signal(0);
+
+
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      console.log(params); // { id: 1 }
+      this.namerouteparam.set(params['name']);
+      this.agerouteparam.set(params['age']);
+
+    })
+  }
 }

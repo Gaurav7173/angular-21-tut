@@ -10,3 +10,11 @@
 
 <button (click)="goToProfile()">Go to profile page</button>
 
+<hr>
+
+<a routerLink="/about/anil">Go to about page</a>
+<br>
+<a [routerLink]="['/about',userdata().name, userdata().age]">Go to about page</a>
+<br>
+<button (click)="goToAbout()">Go to about page</button>
+

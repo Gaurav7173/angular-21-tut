@@ -13,6 +13,12 @@ export const routes: Routes = [
         path:"login",component:Login
     },
     {
+        path:"about/:name/:age",component:About
+    },
+    {
+        path:"about/:name",component:About
+    },
+    {
         path:"about",component:About
     },
     {
