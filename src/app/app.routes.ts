@@ -44,7 +44,9 @@ export const routes: Routes = [
 
     },
     {
-        path: 'mylinks', component: Mylinks,
+        path: 'mylinks', 
+        //component: Mylinks,
+        loadComponent:()=>import('./pages/mylinks/mylinks').then(m=>m.Mylinks),
         children: [
             { path: '', redirectTo: 'myprofile', pathMatch: 'full' },
             { path: 'myprofile', component: Myprofile },
