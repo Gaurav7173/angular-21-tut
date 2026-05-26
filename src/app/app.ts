@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ViewChild, viewChild, ViewContainerRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
 import { single } from 'rxjs';
@@ -11,15 +11,19 @@ import { ControlCount } from './control-count/control-count';
 import { TrimTextPipe } from './custome-pipe/trim-text-pipe';
 import { CurrencyConvertorPipe } from './custome-pipe/currency-convertor-pipe';
 import { Header } from './components/header/header';
+import { UserDetails } from "./pages/user-details/user-details";
+import { Dynamiccomponent } from './pages/dynamiccomponent/dynamiccomponent';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent,Footer,SearchBox,Child,DisplayCount,ControlCount,TrimTextPipe,CurrencyConvertorPipe,RouterLink,Header],
+  imports: [RouterOutlet, FormsModule, CommonModule, ɵEmptyOutletComponent, Footer, SearchBox, Child, DisplayCount, ControlCount, TrimTextPipe, CurrencyConvertorPipe, RouterLink, Header, UserDetails, Dynamiccomponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
+  @ViewChild("container",{read:ViewContainerRef})
+  container:ViewContainerRef| undefined;
   islogin = signal(false);
   show = signal(true);
   status = signal('failure')
@@ -106,53 +110,60 @@ export class App {
     this.tasks.update((tasks) => tasks.filter(task => task.id != id));
   }
 
-  islogin2=signal(true);
+  islogin2 = signal(true);
 
-  students=["anil","sunil","monil"];
+  students = ["anil", "sunil", "monil"];
 
-  studentdata=[{name:"anil",age:20,email:"a@gmail.com"},{name:"sunil",age:25,email:"b@gmail.com"},{name:"monil",age:30,email:"c@gmail.com"}];
+  studentdata = [{ name: "anil", age: 20, email: "a@gmail.com" }, { name: "sunil", age: 25, email: "b@gmail.com" }, { name: "monil", age: 30, email: "c@gmail.com" }];
 
-    islogin3=true;
-    color='';
-    changecolor(color:string){
-      this.color=color;
+  islogin3 = true;
+  color = '';
+  changecolor(color: string) {
+    this.color = color;
 
-    }
+  }
 
-    nums=signal([1,2,3,4,5]);
+  nums = signal([1, 2, 3, 4, 5]);
 
-    usersnew=signal(['anil', 'sunil', 'saunil']);
+  usersnew = signal(['anil', 'sunil', 'saunil']);
 
-    newuser=signal('');
-    selectedusername=signal('');
+  newuser = signal('');
+  selectedusername = signal('');
 
-    addnewuser(){
-      this.usersnew.update((item)=>([...item,this.newuser()]));
-      this.newuser.set('');
-    }
+  addnewuser() {
+    this.usersnew.update((item) => ([...item, this.newuser()]));
+    this.newuser.set('');
+  }
 
-    handleSelectedUser(name: string) {
- 
-  this.selectedusername.set(name);
-}
+  handleSelectedUser(name: string) {
 
-deleteuser(name: string) {
- console.log(name);
-  this.usersnew.update((data) => data.filter(item => item != name));
-}
+    this.selectedusername.set(name);
+  }
 
-titlepipe=signal('angular 21 tutorial');
+  deleteuser(name: string) {
+    console.log(name);
+    this.usersnew.update((data) => data.filter(item => item != name));
+  }
 
-mobile="samsung";
-price=20000;
-date="12-12-2026";
+  titlepipe = signal('angular 21 tutorial');
 
-todaydate=new Date();
-  names=signal(['anil', 'sunil', 'monil']);
+  mobile = "samsung";
+  price = 20000;
+  date = "12-12-2026";
 
-  titlecustomepipe=signal('angular custom pipe tutorial');
-  mynamecustomepipe=signal('my name is Gaurav kumar');
+  todaydate = new Date();
+  names = signal(['anil', 'sunil', 'monil']);
 
-  amount=signal(1000);
+  titlecustomepipe = signal('angular custom pipe tutorial');
+  mynamecustomepipe = signal('my name is Gaurav kumar');
+
+  amount = signal(1000);
+
+  async loadcomponent() {
+    console.log("load component details");
+    const { Dynamiccomponent } = await import('./pages/dynamiccomponent/dynamiccomponent');
+    this.container?.clear();
+    this.container?.createComponent(Dynamiccomponent);
+  }
 
 }
